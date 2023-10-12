@@ -2,5 +2,6 @@
 set -e
 
 # Stop the running container (if any)
-containerid= `docker ps | awk -F" "'{print1}'`
+container_id=$(docker ps | awk -F" " '{print $1}')
+
 docker run -f $containerid
